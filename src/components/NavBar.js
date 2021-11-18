@@ -16,6 +16,9 @@ export default function NavBar() {
               <NavLink to="/items">Items</NavLink>
             </Nav.Link>
             <Nav.Link>
+              <NavLink to="/">Counter</NavLink>
+            </Nav.Link>
+            <Nav.Link>
               <NavLink to="/cart">Cart</NavLink>
             </Nav.Link>
           </Nav>

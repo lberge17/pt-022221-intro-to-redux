@@ -1,4 +1,6 @@
-export default function ItemsList({items, addToCart}) {
+import { connect } from 'react-redux'
+
+function ItemsList({items, addToCart}) {
   return (
     <ul>
       {items.map(i => 
@@ -9,3 +11,5 @@ export default function ItemsList({items, addToCart}) {
     </ul>
   )
 }
+
+export default connect(state => ({items: state.items}))(ItemsList)

@@ -1,15 +1,17 @@
-export default function Cart({items, cart, total}) {
+import { connect } from 'react-redux';
+
+function Cart(props) {
 
   function displayCart(){
     return (
       <div>
         <ul>
-          {cart.map(cartItem => {
-            const item = items.find(i => i.id === cartItem)
+          {props.cart.map(cartItem => {
+            const item = props.items.find(i => i.id === cartItem)
             return <li>{item.name}</li>
           })}
         </ul>
-        <p>Total: ${total}</p>
+        <p>Total: ${props.total}</p>
       </div>
     )
   }
@@ -21,3 +23,13 @@ export default function Cart({items, cart, total}) {
     </div>
   )
 }
+
+function mapStateToProps(state){
+  return {
+    items: state.items,
+    cart: state.cart,
+    total: state.total
+  }
+}
+
+export default connect(mapStateToProps)(Cart)

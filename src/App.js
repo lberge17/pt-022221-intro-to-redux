@@ -7,12 +7,12 @@ import NavBar from './components/NavBar';
 
 class App extends React.Component {
 
-  addToCart = (itemId, price) => {
-    // this.setState(prevState => ({
-    //   cart: [...prevState.cart, itemId],
-    //   total: prevState.total + price
-    // }))
-  }
+  // addToCart = (itemId, price) => {
+  //   // this.setState(prevState => ({
+  //   //   cart: [...prevState.cart, itemId],
+  //   //   total: prevState.total + price
+  //   // }))
+  // }
 
   render() {
     return (
@@ -23,7 +23,6 @@ class App extends React.Component {
           <Route exact path="/items" render={routerProps => 
             <ItemsList 
               routerProps={routerProps} 
-              addToCart={this.addToCart} 
             />}
           />
           <Route exact path="/cart" render={routerProps => 
@@ -36,13 +35,5 @@ class App extends React.Component {
     );
   }
 }
-
-// function mapStateToProps(reduxStoreState){
-//   return {
-//     items: reduxStoreState.items,
-//     cart: reduxStoreState.cart,
-//     total: reduxStoreState.total
-//   }
-// }
 
 export default App;

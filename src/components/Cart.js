@@ -8,7 +8,7 @@ function Cart(props) {
         <ul>
           {props.cart.map(cartItem => {
             const item = props.items.find(i => i.id === cartItem)
-            return <li>{item.name}</li>
+            return <li key={cartItem}>{item.name}</li>
           })}
         </ul>
         <p>Total: ${props.total}</p>
